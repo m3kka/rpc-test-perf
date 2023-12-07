@@ -2,6 +2,10 @@
   "dependencies": {
     "@connectrpc/connect": "^1.1.4",
     "@connectrpc/connect-node": "^1.1.4",
+    "@grpc/grpc-js": "^1.9.12",
+    "@protobuf-ts/grpc-transport": "^2.9.2",
+    "@protobuf-ts/runtime-rpc": "^2.9.2",
+    "google-protobuf": "^3.21.2",
     "prettier": "^3.1.0"
   },
   "scripts": {
