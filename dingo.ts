@@ -5,7 +5,7 @@ import { RateLimitService } from './gen/envoy/service/ratelimit/v3/rls_connect';
 
 const transport = createConnectTransport({
   // Requests will be made to <baseUrl>/<package>.<service>/method
-  baseUrl: 'http://ratelimit:8081',
+  baseUrl: 'http://ratelimiter:8081',
 
   // You have to tell the Node.js http API which HTTP version to use.
   httpVersion: '2',
