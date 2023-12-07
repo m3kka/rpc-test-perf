@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bun
+  namespace: obj-endpoint
+spec:
+  containers:
+    - name: bun
+      image: oven/bun:debian
+      command: ['/bin/bash', '-c', 'while true; do sleep 30; done;']
