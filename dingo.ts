@@ -3,7 +3,7 @@ import { GrpcTransport } from '@protobuf-ts/grpc-transport';
 import grpc, { ChannelCredentials } from '@grpc/grpc-js';
 
 const transport = new GrpcTransport({
-  host: 'http://ratelimiter:8081',
+  host: 'localhost:8081',
   channelCredentials: ChannelCredentials.createInsecure(),
 });
 
