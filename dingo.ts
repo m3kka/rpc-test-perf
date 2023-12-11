@@ -1,9 +1,9 @@
 import { RateLimitServiceClient } from './gen/envoy/service/ratelimit/v3/rls.client';
 import { GrpcTransport } from '@protobuf-ts/grpc-transport';
-import grpc, { ChannelCredentials } from '@grpc/grpc-js';
+import { ChannelCredentials } from '@grpc/grpc-js';
 
 const transport = new GrpcTransport({
-  host: 'ratelimiter:8081',
+  host: 'localhost:8081',
   channelCredentials: ChannelCredentials.createInsecure(),
 });
 
@@ -13,16 +13,20 @@ try {
     domain: 'per-bucket',
     descriptors: [
       {
-        entries: [{ key: 'bucket', value: 'mz-bucket' }],
+        entries: [
+          { key: 'bucket', value: 'mz-bucket' },
+          { key: 'category', value: 'GET' },
+        ],
       },
     ],
     hitsAddend: 1,
   });
+  console.log(res.response);
 } catch (err) {
   console.log(err);
 }
 
-// console.log(res);
+process.exit(0);
 
 // import { createPromiseClient } from '@connectrpc/connect';
 // import { createGrpcTransport } from '@connectrpc/connect-node';

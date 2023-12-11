@@ -1,0 +1,14 @@
+apiVersion: k6.io/v1alpha1
+kind: TestRun
+metadata:
+  name: run-k6
+spec:
+  parallelism: 1
+  starter:
+    image: { STARTER_IMAGE }
+  runner:
+    image: { RUNNER_IMAGE }
+  script:
+    configMap:
+      name: my-test
+      file: test-s.js
