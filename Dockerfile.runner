@@ -7,6 +7,3 @@ RUN curl -sSLo /tmp/linkerd-await https://github.com/linkerd/linkerd-await/relea
 FROM grafana/k6:latest
 
 COPY --from=linkerd /tmp/linkerd-await ./linkerd-await
-
-ENTRYPOINT ["./linkerd-await", "--shutdown", "--"]
-CMD ["k6"]
